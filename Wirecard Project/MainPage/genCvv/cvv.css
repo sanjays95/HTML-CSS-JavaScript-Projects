@@ -1,0 +1,89 @@
+html{
+	height :100%;
+}
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	background: #D8FAFA;
+	background: #EFEFBB;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #D4D3DD, #EFEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#container{
+	width: 580px;
+	height: 510px;
+	margin: 25px auto;
+	margin-bottom: 35px;
+	border : 2px solid gray;
+	background: white;
+}
+.form-group{
+	margin: 0px 8px;
+}
+label{
+	margin-top: 5px;
+}
+#expireMM{
+	width: 120px;	
+}
+#expireYY{
+	width: 120px;
+}
+#scode{
+	width: 158px;
+	font-size: 0.95rem; 
+}
+input{
+	margin-bottom: 9px;
+}
+select{
+	margin-bottom: 9px;
+}
+#button{
+	
+	margin: 0 auto;
+}
+button{
+	margin: 0 auto;
+	width: 250px;
+	height: 50px;
+}
+.reset{
+	display: none;
+}
+p{
+	text-align: center;
+	margin-top: 10px;
+}
+h3{
+	font-family: 'Crete Round', serif;
+	font-size: 2.7rem;
+	text-align: center;
+	margin-top: 0px;
+	padding: 15px 0;
+	padding-bottom: 15px;
+	background: #F1F5F5;
+}
+.images-cardscheme{
+	width: 34%;
+	height: 8px;
+	margin: 0 auto;
+}
+img{
+	display: inline-block;
+	max-width: 100%;
+	height: 70px;
+	margin: 19px 8px;
+	opacity: 0.5;
+}
+#cvv{
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 1.6rem;
+	letter-spacing: 1px;
+	margin-top: 10px;
+
+}
+.inspect{
+	display: none;
+}

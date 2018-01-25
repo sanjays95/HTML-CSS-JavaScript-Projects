@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wirecard Project | Generate CVV</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="cvv.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> 
+</head>
+<body>
+	<div id="container">
+		<h3>Generate CVV </h3>
+		<form name="cvvForm" class="form-group">
+			<label for="pan">PAN : </label><input type="text" id="pan" placeholder="Enter PAN number" name="pan" class="form-control" required>
+			<label for="edate">EXPIRY DATE </label> 
+			<div class="form-inline">
+				<select name='expireMM' class="form-control"  id='expireMM'>
+					<option value=''>Month</option>
+					<option value='01'>January</option>
+					<option value='02'>February</option>
+					<option value='03'>March</option>
+					<option value='04'>April</option>
+					<option value='05'>May</option>
+					<option value='06'>June</option>
+					<option value='07'>July</option>
+					<option value='08'>August</option>
+					<option value='09'>September</option>
+					<option value='10'>October</option>
+					<option value='11'>November</option>
+					<option value='12'>December</option>
+				</select>
+				<select name='expireYY' class="form-control mx-sm-1" id='expireYY' required>
+					<option value=''>Year</option>
+					<option value='10'>2010</option>
+					<option value='11'>2011</option>
+					<option value='12'>2012</option>
+				</select>
+			</div>
+			<input  type="hidden" name="expiry" id="expiry" maxlength="4">
+			<label for="scode">SERVICE CODE </label><input type="text" id="scode" placeholder="Enter service code" name="scode" class="form-control" required></br>
+		</form>
+			
+		<div id="button" class="text-center">
+			<button type="button" class="btn btn-success">Generate CVV</button>
+			<button type="button" class="btn btn-dark reset">Reset</button>
+		</div>
+		<p><span id="cvv"></span></p>
+		<p><span class="inspect">Press Ctrl+Shift+J to see intermediate values.</span></p>
+		
+  	</div>
+  	<div class="images-cardscheme">
+	  	<img class="visa" src="images/1.png">  <!-- 1200px-Visa.svg.png -->
+	  	<img class="mc" src="images/1200px-Mastercard-logo.png">
+	  	<img class="amex" src="images/1200px-American_Express_logo.png">
+		<img class="dci" src="images/5.png">
+	</div>
+<script type="text/javascript" src="terodes.js"></script>
+<script type="text/javascript" src="script.js"></script> 
+</body>
+</html>

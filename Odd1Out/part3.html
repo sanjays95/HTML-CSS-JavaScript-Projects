@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matching Game</title>
+	<style type="text/css">
+		
+		div{
+			position: absolute;
+			width: 600px;
+			height: 500px;
+		}
+
+		#rightSide{
+			left: 650px;
+			border-left: 2px solid black;
+		}
+
+		img{
+			position: absolute;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h2>Matching Game</h2>
+
+	<p>Click on the extra smiling face on the left</p>
+
+	<div id="leftSide"></div>
+	<div id="rightSide"></div>
+
+
+<script>
+	var numberOfFaces = 5;
+	var theLeftSide;
+	var count=0;
+	var gameOver = false;
+
+	theLeftSide = document.querySelectorAll("div")[0];
+	theRightSide = document.querySelectorAll("div")[1];
+
+
+	function removeImages()
+		{
+			while(theLeftSide.firstChild){
+							theLeftSide.removeChild(theLeftSide.firstChild);
+						}
+			while(theRightSide.firstChild){
+							theRightSide.removeChild(theRightSide.firstChild);
+						}
+		}
+	function leftGenerateFaces()
+		{
+
+			image = document.createElement("img");
+			image.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+			randomTop = Math.floor(Math.random() * (theLeftSide.offsetHeight-100));        // 100 - size of the image
+			randomLeft = Math.floor(Math.random() * (theLeftSide.offsetWidth-100));		// 100- size of the image
+
+			image.style.top = randomTop + "px";
+			image.style.left = randomLeft + "px";		
+
+			theLeftSide.appendChild(image);
+		}
+
+	function rightGeneratefaces()												//Generating right side images
+		{	
+			copyLeftImages = theLeftSide.cloneNode(true);      //copying left side images
+			deleteChild = copyLeftImages.removeChild(copyLeftImages.lastChild); 	//removing one image from right
+			theRightSide.appendChild(copyLeftImages);
+		}	
+	
+	function displayfaces()														//Generating Left Images
+	{
+		while(count<numberOfFaces)
+			{
+				leftGenerateFaces();
+				count++;
+			}
+	}	
+
+	// function compareFaces()
+	// {
+	// 	if(this.style.top === deleteChild.style.top && this.style.left === deleteChild.style.left)//comparing style property of clicked image and deleted image
+	// 		{
+	// 			numberOfFaces += 5;
+	// 			count=0;
+	// 			removeImages();
+	// 		 	displayfaces();
+	// 			rightGeneratefaces();
+	// 			imgs = document.querySelectorAll("div img");						//Selecting left images to enable click even on left side
+	// 			length = Math.round(imgs.length/2)									// Number of images on left side
+	// 			reloadNewPic();								
+
+	// 		}
+	// 	else
+	// 		{
+	// 			alert("Game Over");
+	// 			gameOver = true;
+	// 			removeImages();
+	// 		}
+
+	// }
+
+		displayfaces();																//Display images only for first time
+		rightGeneratefaces();
+		//theLeftSide.setAttribute("id","changedLeftID");
+		var imgs = document.querySelectorAll("div img");
+		var length = Math.round(imgs.length/2)
+		//reloadNewPic();
+
+		// function reloadNewPic()														//subsequent display and comparision
+		// {	
+						
+		// 	for(var i=0; i < length ; i++)
+		// 	{
+					
+		// 	 	imgs[i]	.addEventListener("click",compareFaces);
+			 	
+			 				
+		// 	}
+		// }	
+</script>
+
+
+</body>
+</html>
